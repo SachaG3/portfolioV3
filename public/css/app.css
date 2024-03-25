@@ -1,0 +1,42 @@
+.btn-primary {
+    @apply bg-blue-500 text-white py-2 px-4 rounded;
+}
+
+/* Utilisation de dark mode */
+.dark-mode .btn-primary {
+    @apply bg-blue-700;
+}
+
+body {
+    font-family: "Madimi One", sans-serif;
+}
+
+.tooltip[data-tip-visible=true] {
+    display: block; /* Rendez l'infobulle visible */
+    position: absolute; /* Ajustez selon votre mise en page */
+    z-index: 100; /* Assurez-vous qu'elle soit au-dessus des autres éléments */
+    /* Ajoutez d'autres styles ici pour positionner et styliser l'infobulle */
+}
+
+.modal:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal:not(.hidden) {
+    transform: scale(1);
+    visibility: visible;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6); /* Plus lisible */
+    animation: modal-pop 0.2s ease-out;
+}
+
+
+:root {
+    --my-color: #fff;
+    /* or any other variables/style */
+}
+
+

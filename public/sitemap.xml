@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.sachaguignard.fr/</loc>
+        <lastmod>2024-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.sachaguignard.fr/#apropos</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.sachaguignard.fr/#competence</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.sachaguignard.fr/#cursus</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.sachaguignard.fr/#mesprojets</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.sachaguignard.fr/#contacter</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+</urlset>
