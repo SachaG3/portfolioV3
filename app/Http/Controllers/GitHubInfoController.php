@@ -24,7 +24,7 @@ class GitHubInfoController extends Controller
 
         $totalCommits = 0;
         foreach ($repos as $repo) {
-            $commitsResponse = $client->request('GET', "https://api.github.com/repos/{$username}/{$repo['name']}/commits?author=${username}", [
+            $commitsResponse = $client->request('GET', "https://api.github.com/repos/{$username}/{$repo['name']}/commits?author={$username}", [
                 'headers' => $headers,
             ]);
             $commits = json_decode($commitsResponse->getBody()->getContents(), true);

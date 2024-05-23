@@ -115,7 +115,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="hidden sm:block">
         <h3 class="text-center text-lg font-semibold leading-8 ">Mon GitHub</h3>
         <div class="stats shadow justify-center flex ml-20 mr-20 ">
 
@@ -153,12 +153,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="stat-value">86%</div>
-                <div class="stat-title">Tasks done</div>
-                <div class="stat-desc text-secondary">31 tasks remaining</div>
+                <a href="https://www.github.com/SachaG3">
+                    <div class="stat-value">SachaG3</div>
+                </a>
             </div>
 
         </div>
+
     </div>
 
 

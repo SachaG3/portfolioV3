@@ -21,12 +21,14 @@ module.exports = {
     daisyui: {
         themes: [{
             bonbon: {
-                "primary": "#FF69B4",
-                "secondary": "#E6E6FA",
+                "primary": "#a786df",
+                "primary-content": "#E6E6FA",
+                "secondary": "#d9d4e7",
                 "accent": "#FF7F50",
                 "neutral": "#2c2b2b",
                 "base-100": "#ffebf2",
-                "info": "#ADD8E6",
+                "base-content": "#0e172c",
+                "info": "#0e172c",
                 "success": "#F5FFFA",
                 "warning": "#FFFFE0",
                 "error": "#E30B5C",
