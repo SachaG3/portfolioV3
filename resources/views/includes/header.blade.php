@@ -42,6 +42,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+
+
+    <meta name="google-site-verification" content="whNrt9m9dEdW_8jrmdtH_TY9u9XIZzBYy4ih6czMvCs"/>
 </head>
 <body id="accueil">
 
