@@ -29,11 +29,12 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-        return $this->from('contact@sachaguignard.fr')
+        return $this->from("contact@sachaguignard.fr", "Portfolio")
+            ->replyTo($this->data['email'], $this->data['firstName'] . ' ' . $this->data['lastName'])
             ->subject('Nouvelle soumission de formulaire de contact')
             ->view('emails.contact')
             ->with([
-                'data' => $this->data, // Transmettre les données à la vue
+                'data' => $this->data,
             ]);
     }
 
