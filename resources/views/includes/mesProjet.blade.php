@@ -8,8 +8,9 @@
         }
     }
 
-    body {
-        overflow-x: hidden; /* Empêche le défilement horizontal de la page entière */
+    #projets {
+        overflow-x: hidden; /* Assurez-vous que cette règle est appliquée */
+        max-width: 100vw; /* Empêche le débordement au-delà de la largeur de l'écran */
     }
 </style>
 
@@ -17,7 +18,7 @@
 <div id="projets" class="container mx-auto text-center">
     <h2 class="text-3xl font-bold text-center pb-10" tabindex="0">Mes Projets</h2>
     <p class="mb-12 text-lg">Voici quelques-uns des projets sur lesquels j'ai travaillé récemment.</p>
-    <div class="owl-carousel owl-theme">
+    <div class="owl-carousel owl-theme jsp-jpp">
         @foreach($projects as $project)
             <div class="item pb-10">
                 <div class="card w-96 bg-base-100 shadow-xl">
