@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use App\Models\Skill;
 use App\Models\SkillIcon;
 use Illuminate\Http\Request;
@@ -60,8 +61,9 @@ class SkillController extends Controller
 
     public function showSkills()
     {
+        $projects = Project::with(['cards', 'technologies'])->get();
         $skills = Skill::with('icons')->get(); // Assurez-vous d'avoir la relation 'icons' définie dans votre modèle Skill
-        return view('index', compact('skills'));
+        return view('index', compact('skills', 'projects'));
     }
 
 

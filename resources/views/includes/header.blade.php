@@ -42,6 +42,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+
+
+    <meta name="google-site-verification" content="whNrt9m9dEdW_8jrmdtH_TY9u9XIZzBYy4ih6czMvCs"/>
 </head>
 <body id="accueil">
 
@@ -51,6 +54,7 @@
     <div class="flex-1">
         <a class="btn btn-ghost text-xl" href="#accueil" aria-label="Accueil">Sacha Guignard</a>
     </div>
+
     <div class="flex-none">
         <!-- Bouton menu pour les écrans mobiles -->
         <button class="btn btn-square btn-ghost lg:hidden" aria-label="Ouvrir le menu" id="menu-button">
@@ -122,6 +126,14 @@
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                 </svg>
                 Me contacter</a></li>
+        @auth
+            <li>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+        @endauth
     </ul>
 </nav>
 

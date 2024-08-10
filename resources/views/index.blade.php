@@ -1,5 +1,7 @@
 @include('includes/header')
 
+@include('includes/bento')
+
 @include('includes/accueil')
 
 @include('includes/apropos')

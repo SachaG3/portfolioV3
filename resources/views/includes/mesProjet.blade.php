@@ -1,18 +1,53 @@
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
 <style>
     @media (min-width: 1024px) {
-        .slick-list {
-            overflow: visible;
+        .owl-stage-outer {
+            overflow: visible !important;
         }
     }
 
+    body {
+        overflow-x: hidden; /* Empêche le défilement horizontal de la page entière */
+    }
 </style>
-<div class="container mx-auto text-center ">
-    <h2 class="text-4xl font-bold mb-8">Mes Projets</h2>
+
+<!-- resources/views/projects/index.blade.php -->
+<div id="projets" class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold text-center pb-10" tabindex="0">Mes Projets</h2>
     <p class="mb-12 text-lg">Voici quelques-uns des projets sur lesquels j'ai travaillé récemment.</p>
-    <div class="your-class ">
-        <div>
+    <div class="owl-carousel owl-theme">
+        @foreach($projects as $project)
+            <div class="item pb-10">
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    @if($project->cards->isNotEmpty() && $project->cards->first()->image)
+                        <figure>
+                            <img src="{{ asset($project->cards->first()->image) }}" alt="{{ $project->titre }}"
+                                 loading="lazy"/>
+                        </figure>
+                    @endif
+                    <div class="card-body">
+                        <h3 class="card-title">{{ $project->titre }}</h3>
+                        <p>{{ $project->cards->first()->contenu }}</p>
+                        @if($project->technologies->isNotEmpty())
+                            <p>Technologies :
+                                @foreach($project->technologies as $technology)
+                                    {{ $technology->nom }}@if(!$loop->last)
+                                        ,
+                                    @endif
+                                @endforeach
+                            </p>
+                        @endif
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary" onclick="openModal({{ $project->id }})">En voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        <div class="item pb-10 ">
             <div class="card w-96 bg-base-100 shadow-xl">
                 <figure><img src="/img/gite_maisons.webp" alt="Gite de la Chouette" loading="lazy"/></figure>
                 <div class="card-body">
@@ -20,12 +55,12 @@
                     <p>Site web réalisé pour un gîte à Maisons avec WordPress.</p>
                     <p>Technologies : WordPress</p>
                     <div class="card-actions justify-end">
-                        <a href="https://www.gitemaisons.fr" class="btn btn-primary">Voir le projet</a>
+                        <button class="btn btn-primary" onclick="openModal()">En voir plus</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
+        <div class="item pb-10">
             <div class="card w-96 bg-base-100 shadow-xl">
                 <figure><img src="/img/firstPortfolio.webp" alt="Portfolio" loading="lazy"/></figure>
                 <div class="card-body">
@@ -33,13 +68,12 @@
                     <p>Portfolio réalisé comme projet de premier semestre avec HTML/CSS.</p>
                     <p>Technologies : HTML, CSS, PHP, YAML</p>
                     <div class="card-actions justify-end">
-                        <a href="https://www.beta01.sachaguignard.fr/portfolio" class="btn btn-primary">Voir le
-                            projet</a>
+                        <button class="btn btn-primary" onclick="openModal(46)">En voir plus</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
+        <div class="item pb-10">
             <div class="card w-96 bg-base-100 shadow-xl">
                 <figure><img src="/img/Ariane.webp" alt="Ariane" loading="lazy"/></figure>
                 <div class="card-body">
@@ -47,78 +81,38 @@
                     <p>Site réalisé dans le cadre du premier semestre en licence avec HTML/CSS.</p>
                     <p>Technologies : HTML, CSS</p>
                     <div class="card-actions justify-end">
-                        <a href="https://ariane.sachaguignard.fr/accueil.html" class="btn btn-primary">Voir le
-                            projet</a>
+                        <button class="btn btn-primary" onclick="openModal(2)">En voir plus</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="/img/normanbet.webp" alt="NormanBet" loading="lazy"/></figure>
-                <div class="card-body">
-                    <h3 class="card-title">NormanBet</h3>
-                    <p>Site fait en cours pour simuler un site de paris pour les JO2024.</p>
-                    <p>Technologies : Spring Java, Bootstrap</p>
-                    <div class="card-actions justify-end">
-                        <a href="https://srv2-vm-2116.sts-sio-caen.info/" class="btn btn-primary">Voir le projet</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-
-<script type="text/javascript">
-    window.addEventListener('scroll', function () {
-        window.scrollTo(0, window.scrollY);
-    });
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
     $(document).ready(function () {
-        $('.your-class').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            nav: false,
             autoplay: true,
-            autoplaySpeed: 5000,
-            lazyLoad: 'ondemand',
-            centerMode: true,
-            centerPadding: '',
-            prevArrow: '',
-            nextArrow: '',
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: true,
-                        centerPadding: '10%'
-                    }
+            autoplayTimeout: 9000,
+            items: 1,
+            center: true,
+            margin: 420,
+
+            responsive: {
+                0: {
+                    items: 1
                 },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        centerPadding: '10%'
-                    }
+                600: {
+                    items: 2
                 },
-                {
-                    breakpoint: 640,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 0,
-                        centerMode: true,
-                        dots: true,
-                    }
+                1000: {
+                    items: 4
                 }
-            ]
+            }
         });
     });
 </script>
