@@ -10,7 +10,7 @@
     }
 </style>
 
-@include('includes.header')
+@include('includes.admin-header')
 <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg max-w-4xl">
     <h1 class="text-3xl font-bold mb-6 text-center">Créer un nouveau projet</h1>
 
@@ -337,3 +337,4 @@
         });
     });
 </script>
+@include("includes/footer")

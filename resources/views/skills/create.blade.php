@@ -1,4 +1,4 @@
-@include("includes/header")
+@include("includes/admin-header")
 <div class="container mx-auto px-4 py-8">
     <h1 class="text-2xl font-bold text-center mb-6">Ajouter une compétence</h1>
 
@@ -60,5 +60,4 @@
         addSvgInput(i);
     }
 </script>
-</body>
-</html>
+@include("includes/footer")

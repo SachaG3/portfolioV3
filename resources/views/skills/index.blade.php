@@ -1,4 +1,4 @@
-@include('includes/header')
+@include('includes/admin-header')
 <!-- Bouton pour ouvrir le modal -->
 <button
     class="open-modal-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -175,4 +175,5 @@
         addSvgInput(i);
     }
 </script>
+@include("includes/footer")
 

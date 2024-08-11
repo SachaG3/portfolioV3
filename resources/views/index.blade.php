@@ -1,4 +1,8 @@
-@include('includes/header')
+@if(session('authenticated'))
+    @include('includes/admin-header')
+@else
+    @include('includes/header')
+@endif
 
 @include('includes/bento')
 
@@ -15,9 +19,5 @@
 @include('includes/mail')
 
 @include('includes/footer')
-
-
-</body>
-</html>
 
 
