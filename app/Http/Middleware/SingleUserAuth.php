@@ -27,7 +27,7 @@ class SingleUserAuth
             if ($user && Hash::check($password, $user->password)) {
                 $request->session()->put('authenticated', true);
             } else {
-                return redirect('login')->withErrors(['Invalid credentials']);
+                return redirect('/');
             }
         }
 

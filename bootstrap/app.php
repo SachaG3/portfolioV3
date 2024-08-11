@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\HttpsProtocol;
 use App\Http\Middleware\SingleUserAuth;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -12,8 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
         $middleware->alias(['single.user.auth' => SingleUserAuth::class]);
+        $middleware->append(HttpsProtocol::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
