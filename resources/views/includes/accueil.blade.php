@@ -21,7 +21,8 @@
                 <h1 id="desktop-heading"
                     class="text-4xl lg:text-5xl font-bold mt-2 leading-tight text-center dark:text-blue-300 lg:text-left lg:ml-4"
                     itemprop="headline">
-                    Développeur backend, <br>futur architecte logiciel, <br>et passionné du DevOps.
+                    Portfolio de Sacha Guignard,<br>Développeur backend & futur architecte logiciel,<br>passionné par le
+                    DevOps.
                 </h1>
             </div>
             <div class="hidden lg:block mt-4 mockup-code" itemprop="text">
