@@ -28,7 +28,7 @@
           itemprop="description">
     <meta property="og:title" content="Portfolio de Sacha Guignard">
     <meta property="og:description" content="Développeur backend passionné par le DevOps et l'architecture logicielle.">
-    <meta property="og:image" content="https://www.sachaguignard.fr/img/icon.ico">
+    <meta property="og:image" content="{{ asset('img/img.png') }}">
     <meta property="og:url" content="https://www.sachaguignard.fr">
     <meta property="og:type" content="website">
 
@@ -36,7 +36,7 @@
     <meta name="twitter:title" content="Portfolio de Sacha Guignard">
     <meta name="twitter:description"
           content="Développeur backend passionné par le DevOps et l'architecture logicielle.">
-    <meta name="twitter:image" content="https://www.sachaguignard.fr/img/icon.ico">
+    <meta name="twitter:image" content="{{ asset('img/img.png') }}">
     <meta name="twitter:url" content="https://www.sachaguignard.fr">
 
     <link rel="canonical" href="https://www.sachaguignard.fr">
