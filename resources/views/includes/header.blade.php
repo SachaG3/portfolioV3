@@ -31,6 +31,8 @@
     <meta property="og:image" content="{{ asset('img/img.png') }}">
     <meta property="og:url" content="https://www.sachaguignard.fr">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sacha Guignard Portfolio">
+
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio de Sacha Guignard">
