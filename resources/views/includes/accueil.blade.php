@@ -2,11 +2,8 @@
          itemtype="https://schema.org/Person">
     <div class="container mx-auto px-8 flex flex-col lg:flex-row items-center h-full">
         <div class="lg:flex-1 lg:justify-start mb-8 lg:mb-0">
-            <div class="lg:hidden text-center mb-5">
+            <div class="lg:hidden text-center mb-5" id="mobile-heading-container">
                 <p class="font-bold" itemprop="name">Hello, I am <span itemprop="givenName">Sacha</span>! 👋</p>
-                <h1 class="text-3xl lg:text-5xl dark:text-white font-bold mt-2 leading-tight text-center lg:text-left lg:ml-4"
-                    itemprop="jobTitle">
-                    Développeur backend</h1>
             </div>
             <div class="flex justify-center">
                 <img src="/img/profile.webp" alt="Sacha Guignard"
@@ -21,7 +18,8 @@
                      class="text-sm bg-gray-700 inline-block px-3 py-1 rounded-full text-center text-white">
                     Hello, I'm Sacha! 👋
                 </div>
-                <h1 class="text-4xl lg:text-5xl font-bold mt-2 leading-tight text-center dark:text-blue-300 lg:text-left lg:ml-4"
+                <h1 id="desktop-heading"
+                    class="text-4xl lg:text-5xl font-bold mt-2 leading-tight text-center dark:text-blue-300 lg:text-left lg:ml-4"
                     itemprop="headline">
                     Développeur backend, <br>futur architecte logiciel, <br>et passionné du DevOps.
                 </h1>
@@ -72,3 +70,23 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.innerWidth < 1024) { // Adjust the breakpoint as needed
+            // Generate the mobile H1
+            var mobileHeadingContainer = document.getElementById('mobile-heading-container');
+            var h1 = document.createElement('h1');
+            h1.className = 'text-3xl lg:text-5xl dark:text-white font-bold mt-2 leading-tight text-center lg:text-left lg:ml-4';
+            h1.setAttribute('itemprop', 'jobTitle');
+            h1.innerHTML = 'Développeur backend';
+            mobileHeadingContainer.appendChild(h1);
+
+            // Remove the desktop H1
+            var desktopHeading = document.getElementById('desktop-heading');
+            if (desktopHeading) {
+                desktopHeading.remove();
+            }
+        }
+    });
+</script>
