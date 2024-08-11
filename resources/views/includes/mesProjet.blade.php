@@ -15,74 +15,77 @@
 </style>
 
 <!-- resources/views/projects/index.blade.php -->
-<div id="projets" class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold text-center pb-10" tabindex="0">Mes Projets</h2>
-    <p class="mb-12 text-lg">Voici quelques-uns des projets sur lesquels j'ai travaillé récemment.</p>
+<div id="projets" class="container mx-auto text-center" itemscope itemtype="https://schema.org/ItemList">
+    <h2 class="text-3xl font-bold text-center pb-10" tabindex="0" itemprop="name">Mes Projets</h2>
+    <p class="mb-12 text-lg" itemprop="description">Voici quelques-uns des projets sur lesquels j'ai travaillé
+        récemment.</p>
     <div class="owl-carousel owl-theme jsp-jpp">
         @foreach($projects as $project)
-            <div class="item pb-10">
+            <div class="item pb-10" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
                 <div class="card w-96 bg-base-100 shadow-xl">
                     @if($project->cards->isNotEmpty() && $project->cards->first()->image)
                         <figure>
                             <img src="{{ asset($project->cards->first()->image) }}" alt="{{ $project->titre }}"
-                                 loading="lazy"/>
+                                 loading="lazy" itemprop="image"/>
                         </figure>
                     @endif
                     <div class="card-body">
-                        <h3 class="card-title">{{ $project->titre }}</h3>
-                        <p>{{ $project->cards->first()->contenu }}</p>
+                        <h3 class="card-title" itemprop="headline">{{ $project->titre }}</h3>
+                        <p itemprop="text">{{ $project->cards->first()->contenu }}</p>
                         @if($project->technologies->isNotEmpty())
                             <p>Technologies :
                                 @foreach($project->technologies as $technology)
-                                    {{ $technology->nom }}@if(!$loop->last)
+                                    <span itemprop="keywords">{{ $technology->nom }}</span>@if(!$loop->last)
                                         ,
                                     @endif
                                 @endforeach
                             </p>
                         @endif
                         <div class="card-actions justify-end">
-                            <button class="btn btn-primary" onclick="openModal({{ $project->id }})">En voir plus
+                            <button class="btn btn-primary" onclick="openModal({{ $project->id }})" itemprop="url">En
+                                voir plus
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
-        <div class="item pb-10 ">
+        <div class="item pb-10" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="/img/gite_maisons.webp" alt="Gite de la Chouette" loading="lazy"/></figure>
+                <figure><img src="/img/gite_maisons.webp" alt="Gite de la Chouette" loading="lazy" itemprop="image"/>
+                </figure>
                 <div class="card-body">
-                    <h3 class="card-title">Gite de la Chouette</h3>
-                    <p>Site web réalisé pour un gîte à Maisons avec WordPress.</p>
-                    <p>Technologies : WordPress</p>
+                    <h3 class="card-title" itemprop="headline">Gite de la Chouette</h3>
+                    <p itemprop="text">Site web réalisé pour un gîte à Maisons avec WordPress.</p>
+                    <p>Technologies : <span itemprop="keywords">WordPress</span></p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="openModal()">En voir plus</button>
+                        <button class="btn btn-primary" onclick="openModal()" itemprop="url">En voir plus</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item pb-10">
+        <div class="item pb-10" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="/img/firstPortfolio.webp" alt="Portfolio" loading="lazy"/></figure>
+                <figure><img src="/img/firstPortfolio.webp" alt="Portfolio" loading="lazy" itemprop="image"/></figure>
                 <div class="card-body">
-                    <h3 class="card-title">Portfolio</h3>
-                    <p>Portfolio réalisé comme projet de premier semestre avec HTML/CSS.</p>
-                    <p>Technologies : HTML, CSS, PHP, YAML</p>
+                    <h3 class="card-title" itemprop="headline">Portfolio</h3>
+                    <p itemprop="text">Portfolio réalisé comme projet de premier semestre avec HTML/CSS.</p>
+                    <p>Technologies : <span itemprop="keywords">HTML, CSS, PHP, YAML</span></p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="openModal(46)">En voir plus</button>
+                        <button class="btn btn-primary" onclick="openModal(46)" itemprop="url">En voir plus</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item pb-10">
+        <div class="item pb-10" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="/img/Ariane.webp" alt="Ariane" loading="lazy"/></figure>
+                <figure><img src="/img/Ariane.webp" alt="Ariane" loading="lazy" itemprop="image"/></figure>
                 <div class="card-body">
-                    <h3 class="card-title">Ariane</h3>
-                    <p>Site réalisé dans le cadre du premier semestre en licence avec HTML/CSS.</p>
-                    <p>Technologies : HTML, CSS</p>
+                    <h3 class="card-title" itemprop="headline">Ariane</h3>
+                    <p itemprop="text">Site réalisé dans le cadre du premier semestre en licence avec HTML/CSS.</p>
+                    <p>Technologies : <span itemprop="keywords">HTML, CSS</span></p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="openModal(2)">En voir plus</button>
+                        <button class="btn btn-primary" onclick="openModal(2)" itemprop="url">En voir plus</button>
                     </div>
                 </div>
             </div>

@@ -1,44 +1,43 @@
-<section class="flex flex-col items-center justify-center min-h-screen " style="min-height: 93svh">
+<section class="flex flex-col items-center justify-center min-h-screen" style="min-height: 93svh" itemscope
+         itemtype="https://schema.org/Person">
     <div class="container mx-auto px-8 flex flex-col lg:flex-row items-center h-full">
         <div class="lg:flex-1 lg:justify-start mb-8 lg:mb-0">
             <div class="lg:hidden text-center mb-5">
-                <p class="font-bold">Hello, I am Sacha! 👋</p>
-                <h1 class="text-3xl lg:text-5xl dark:text-white font-bold mt-2 leading-tight text-center lg:text-left lg:ml-4">
+                <p class="font-bold" itemprop="name">Hello, I am <span itemprop="givenName">Sacha</span>! 👋</p>
+                <h1 class="text-3xl lg:text-5xl dark:text-white font-bold mt-2 leading-tight text-center lg:text-left lg:ml-4"
+                    itemprop="jobTitle">
                     Développeur backend</h1>
             </div>
             <div class="flex justify-center">
                 <img src="/img/profile.webp" alt="Sacha Guignard"
                      class="rounded-lg shadow-2xl max-w-full h-auto align-middle border-none animate-float hover:scale-105 transition-transform duration-300"
-                     style="max-height: 50vh;"/>
+                     style="max-height: 50vh;" itemprop="image"/>
             </div>
-
-
         </div>
 
-        <div class="flex-1 lg:ml-8">
+        <div class="flex-1 lg:ml-8" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="hidden lg:block items-center">
                 <div tabindex="0"
                      class="text-sm bg-gray-700 inline-block px-3 py-1 rounded-full text-center text-white">
                     Hello, I'm Sacha! 👋
                 </div>
-                <h1 class="text-4xl lg:text-5xl font-bold mt-2 leading-tight text-center dark:text-blue-300 lg:text-left lg:ml-4">
+                <h1 class="text-4xl lg:text-5xl font-bold mt-2 leading-tight text-center dark:text-blue-300 lg:text-left lg:ml-4"
+                    itemprop="headline">
                     Développeur backend, <br>futur architecte logiciel, <br>et passionné du DevOps.
                 </h1>
             </div>
-            <div class="hidden lg:block mt-4 mockup-code">
+            <div class="hidden lg:block mt-4 mockup-code" itemprop="text">
                 <pre data-prefix="$"
-                     class="text-white "><code>echo "Bienvenue! Préparez-vous à installer mon portfolio"</code></pre>
-                <pre data-prefix="$"
-                     class="text-white"><code>sudo apt-get install portfolio</code></pre>
-                <pre data-prefix="$"
-                     class="text-white"><code>Installation en cours, veuillez patienter...</code></pre>
+                     class="text-white"><code>echo "Bienvenue! Préparez-vous à installer mon portfolio"</code></pre>
+                <pre data-prefix="$" class="text-white"><code>sudo apt-get install portfolio</code></pre>
+                <pre data-prefix="$" class="text-white"><code>Installation en cours, veuillez patienter...</code></pre>
                 <pre data-prefix="$" class="bg-green-200 dark:bg-green-800 text-green-900 dark:text-green-200"><code>echo "Le portfolio a été installé avec succès. Bonne visite!"</code></pre>
             </div>
 
             <div class="flex items-center justify-center space-x-4 mt-5">
                 <a tabindex="0" href="https://www.github.com/SachaG3" target="_blank"
                    class="tooltip text-base-content" data-tip="Profil GitHub de Sacha Guignard"
-                   aria-label="Profil GitHub de Sacha Guignard">
+                   aria-label="Profil GitHub de Sacha Guignard" itemprop="sameAs">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-github">
@@ -49,7 +48,7 @@
                 </a>
                 <a tabindex="0" href="https://www.linkedin.com/in/sacha-guignard-a5b741232" target="_blank"
                    class="tooltip " data-tip="Profil Linkedin de Sacha Guignard"
-                   aria-label="Profil Linkedin de Sacha Guignard">
+                   aria-label="Profil Linkedin de Sacha Guignard" itemprop="sameAs">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-linkedin">
@@ -59,10 +58,10 @@
                     </svg>
                 </a>
                 <a tabindex="0" href="cv.pdf" target="_blank" class="tooltip"
-                   data-tip="CV de Sacha Guignard" aria-label="CV de Sacha Guignard">
+                   data-tip="CV de Sacha Guignard" aria-label="CV de Sacha Guignard" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="lucide lucide-scroll-text ">
+                         class="lucide lucide-scroll-text">
                         <path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/>
                         <path d="M19 17V5a2 2 0 0 0-2-2H4"/>
                         <path d="M15 8h-5"/>
@@ -73,4 +72,3 @@
         </div>
     </div>
 </section>
-

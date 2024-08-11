@@ -1,12 +1,13 @@
-<section class="py-10 md:py-16 " id="apropos">
-    <h2 class="text-3xl font-bold text-center pb-10 dark:text-blue-50 ">A propos de moi</h2>
+<section class="py-10 md:py-16" id="apropos" itemscope itemtype="https://schema.org/Person">
+    <h2 class="text-3xl font-bold text-center pb-10 dark:text-blue-50" itemprop="name">A propos de moi</h2>
     <div class="container max-w-screen-xl mx-auto px-4">
-        <h3 class="text-center text-lg font-semibold leading-8 ">Qui suis-je ?</h3>
+        <h3 class="text-center text-lg font-semibold leading-8">Qui suis-je ?</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" tabindex="0">
             <!-- Passion et Engagement dans le Développement Web -->
             <div tabindex="0"
-                 class="hover:bg-base-200 bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl dark:over:bg-gray-800 transition duration-300 ease-in-out">
-                <div class="w-20 py-6 flex  rounded-md mb-4">
+                 class="hover:bg-base-200 bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl dark:over:bg-gray-800 transition duration-300 ease-in-out"
+                 itemprop="description">
+                <div class="w-20 py-6 flex rounded-md mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-folder-heart">
@@ -23,8 +24,9 @@
             </div>
             <!-- Expérience Pratique et Projets Réalisés -->
             <div tabindex="0"
-                 class=" hover:bg-base-200 bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl  transition duration-300 ease-in-out">
-                <div class="w-20 py-6 flex  rounded-md mb-4">
+                 class="hover:bg-base-200 bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl transition duration-300 ease-in-out"
+                 itemprop="hasCredential" itemscope itemtype="https://schema.org/DefinedTerm">
+                <div class="w-20 py-6 flex rounded-md mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-briefcase">
@@ -32,15 +34,16 @@
                         <rect width="20" height="14" x="2" y="6" rx="2"/>
                     </svg>
                 </div>
-                <h4 class="font-medium text-lg mb-4">Expérience Pratique</h4>
-                <p class="font-normal text-md">De stages en développement web à des projets scolaires
+                <h4 class="font-medium text-lg mb-4" itemprop="name">Expérience Pratique</h4>
+                <p class="font-normal text-md" itemprop="description">De stages en développement web à des projets
+                    scolaires
                     innovants, mon parcours est jalonné d'expériences enrichissantes qui attestent de ma capacité à
                     mener à bien des projets variés.</p>
             </div>
             <!-- Atouts et Compétences Clés -->
             <div tabindex="0"
-                 class="bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl
-            hover:bg-base-200 transition duration-300 ease-in-out">
+                 class="bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl hover:bg-base-200 transition duration-300 ease-in-out"
+                 itemprop="knowsAbout" itemscope itemtype="https://schema.org/DefinedTerm">
                 <div class="w-20 py-6 flex rounded-md mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -51,15 +54,16 @@
                         <path d="M10 22h4"/>
                     </svg>
                 </div>
-                <h4 class="font-medium text-lg mb-4">Atouts et Compétences</h4>
-                <p class="font-normal text-md">Ma maîtrise technologique s'étend de SQL, Python, Java,
+                <h4 class="font-medium text-lg mb-4" itemprop="name">Atouts et Compétences</h4>
+                <p class="font-normal text-md" itemprop="description">Ma maîtrise technologique s'étend de SQL, Python,
+                    Java,
                     HTML, à CSS, PHP, et JavaScript. Mon esprit de résolution de problème et mon travail d'équipe sont
                     les pierres angulaires de mon approche professionnelle.</p>
             </div>
         </div>
     </div>
     <div>
-        <div class="py-12 sm:py-16">
+        <div class="py-12 sm:py-16" itemscope itemtype="https://schema.org/Thing">
             <div class="mx-auto max-w-7xl px-6 lg:px-8" tabindex="0">
                 <h3 class="text-center text-lg font-semibold leading-8 ">Mes outils</h3>
                 <div
@@ -115,8 +119,8 @@
             </div>
         </div>
     </div>
-    <div class="hidden sm:block">
-        <h3 class="text-center text-lg font-semibold leading-8 ">Mon GitHub</h3>
+    <div class="hidden sm:block" itemscope itemtype="https://schema.org/Organization">
+        <h3 class="text-center text-lg font-semibold leading-8">Mon GitHub</h3>
         <div class="stats shadow justify-center flex ml-20 mr-20 ">
 
             <div class="stat">
@@ -130,7 +134,7 @@
                     </svg>
                 </div>
                 <div class="stat-title">Nombre de repository</div>
-                <div class="stat-value text-primary" id="repo"></div>
+                <div class="stat-value text-primary" id="repo" itemprop="numberOfItems"></div>
             </div>
 
             <div class="stat">
@@ -142,28 +146,28 @@
                     </svg>
                 </div>
                 <div class="stat-title">Nombre de commit</div>
-                <div class="stat-value text-secondary" id="commit"></div>
+                <div class="stat-value text-secondary" id="commit" itemprop="interactionCount"></div>
             </div>
 
             <div class="stat">
                 <div class="stat-figure text-secondary">
-                    <div class="avatar online">
+                    <div class="avatar online" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                         <div class="w-16 rounded-full">
-                            <img src="https://avatars.githubusercontent.com/u/113612623?v=4"/>
+                            <img src="https://avatars.githubusercontent.com/u/113612623?v=4" alt="GitHub Avatar"
+                                 itemprop="url"/>
                         </div>
                     </div>
                 </div>
                 <a href="https://www.github.com/SachaG3">
-                    <div class="stat-value">SachaG3</div>
+                    <div class="stat-value" itemprop="name">SachaG3</div>
                 </a>
             </div>
 
         </div>
 
     </div>
-
-
 </section>
+
 <script>
     async function fetchGitHubInfo() {
         const response = await fetch(`/api/github-info`);
@@ -172,7 +176,5 @@
         document.getElementById("repo").innerHTML = `<p>${data.numOfRepos}</p>`;
     }
 
-
     fetchGitHubInfo();
 </script>
-
