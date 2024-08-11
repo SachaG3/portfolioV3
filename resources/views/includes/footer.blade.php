@@ -12,7 +12,7 @@
     </aside>
     <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end" itemscope
          itemtype="https://schema.org/SiteNavigationElement">
-        <a tabindex="0" href="https://www.github.com/SachaG3" target="_blank"
+        <a tabindex="0" href="https://www.github.com/SachaG3" title="GitHub" target="_blank"
            class="tooltip text-base-content" data-tip="Profil GitHub de Sacha Guignard"
            aria-label="Profil GitHub de Sacha Guignard" itemprop="url">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -23,7 +23,7 @@
                 <path d="M9 18c-4.51 2-5-2-7-2"/>
             </svg>
         </a>
-        <a tabindex="0" href="https://www.linkedin.com/in/sacha-guignard-a5b741232" target="_blank"
+        <a tabindex="0" title="Linkedin" href="https://www.linkedin.com/in/sacha-guignard-a5b741232" target="_blank"
            class="tooltip text-base-content" data-tip="Profil Linkedin de Sacha Guignard"
            aria-label="Profil Linkedin de Sacha Guignard" itemprop="url">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -34,7 +34,7 @@
                 <circle cx="4" cy="4" r="2"/>
             </svg>
         </a>
-        <a tabindex="0" href="cv.pdf" target="_blank" class="tooltip text-base-content"
+        <a tabindex="0" title="cv" href="cv.pdf" target="_blank" class="tooltip text-base-content"
            data-tip="CV de Sacha Guignard" aria-label="CV de Sacha Guignard" itemprop="url">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

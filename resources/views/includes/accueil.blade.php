@@ -35,7 +35,7 @@
             </div>
 
             <div class="flex items-center justify-center space-x-4 mt-5">
-                <a tabindex="0" href="https://www.github.com/SachaG3" target="_blank"
+                <a tabindex="0" href="https://www.github.com/SachaG3" title="GitHub" target="_blank"
                    class="tooltip text-base-content" data-tip="Profil GitHub de Sacha Guignard"
                    aria-label="Profil GitHub de Sacha Guignard" itemprop="sameAs">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -47,7 +47,7 @@
                     </svg>
                 </a>
                 <a tabindex="0" href="https://www.linkedin.com/in/sacha-guignard-a5b741232" target="_blank"
-                   class="tooltip " data-tip="Profil Linkedin de Sacha Guignard"
+                   class="tooltip " title="Linkedin" data-tip="Profil Linkedin de Sacha Guignard"
                    aria-label="Profil Linkedin de Sacha Guignard" itemprop="sameAs">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -57,7 +57,7 @@
                         <circle cx="4" cy="4" r="2"/>
                     </svg>
                 </a>
-                <a tabindex="0" href="cv.pdf" target="_blank" class="tooltip"
+                <a tabindex="0" href="cv.pdf" title="cv" target="_blank" class="tooltip"
                    data-tip="CV de Sacha Guignard" aria-label="CV de Sacha Guignard" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

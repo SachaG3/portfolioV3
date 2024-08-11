@@ -13,14 +13,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title itemprop="name">Portfolio - Sacha Guignard</title>
+    <title itemprop="name">Portfolio de Sacha Guignard - Développeur Web, Backend et DevOps</title>
 
     <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet" as="style">
 
-    <link rel="icon" href="/img/icon.ico" type="image/x-icon" loading="lazy" itemprop="image">
+    <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon" itemprop="image">
 
     <!-- Meta description -->
     <meta name="description"
@@ -52,7 +52,8 @@
     <nav
         class="navbar bg-base-100 sticky top-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/95 bg-base-300/50 relative">
         <div class="flex-1" itemprop="name">
-            <a class="btn btn-ghost text-xl" href="#accueil" aria-label="Accueil" itemprop="url">Sacha Guignard</a>
+            <a class="btn btn-ghost text-xl" href="#accueil" title="Sacha Guignard" aria-label="Accueil" itemprop="url">Sacha
+                Guignard</a>
         </div>
         <div class="flex-none">
             <!-- Bouton menu pour les écrans mobiles -->
@@ -78,7 +79,7 @@
                     <option value="bonbon">Bonbon 🍬</option>
                 </select>
             </li>
-            <li><a href="#apropos" tabindex="0" aria-label="A propos" itemprop="url">
+            <li><a href="#apropos" title="apropos" tabindex="0" aria-label="A propos" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-user">
@@ -87,7 +88,7 @@
                         <circle cx="12" cy="7" r="4"/>
                     </svg>
                     A propos</a></li>
-            <li><a href="#cursus" tabindex="0" aria-label="Cursus" itemprop="url">
+            <li><a href="#cursus" title="cursus" tabindex="0" aria-label="Cursus" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-book-open">
@@ -96,7 +97,7 @@
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                     </svg>
                     Cursus</a></li>
-            <li><a href="#competence" tabindex="0" aria-label="Compétence" itemprop="url">
+            <li><a href="#competence" title="competence" cursus tabindex="0" aria-label="Compétence" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-star">
@@ -105,7 +106,7 @@
                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                     </svg>
                     Compétence</a></li>
-            <li><a href="#projets" tabindex="0" aria-label="Mes projets" itemprop="url">
+            <li><a href="#projets" title="projets" tabindex="0" aria-label="Mes projets" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-folder-git-2">
@@ -117,7 +118,7 @@
                         <circle cx="20" cy="19" r="2"/>
                     </svg>
                     Mes projets</a></li>
-            <li><a href="#contacter" tabindex="0" aria-label="Me contacter" itemprop="url">
+            <li><a href="#contacter" title="contacter" tabindex="0" aria-label="Me contacter" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-mail">
@@ -141,7 +142,7 @@
                     <option value="bonbon">Bonbon</option>
                 </select>
             </li>
-            <li><a href="#apropos" aria-label="A propos" itemprop="url">
+            <li><a href="#apropos" title="apropos" aria-label="A propos" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-user">
@@ -150,7 +151,7 @@
                         <circle cx="12" cy="7" r="4"/>
                     </svg>
                     A propos</a></li>
-            <li><a href="#competence" aria-label="Compétence" itemprop="url">
+            <li><a href="#competence" title="competence" aria-label="Compétence" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-star">
@@ -159,7 +160,7 @@
                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                     </svg>
                     Compétence</a></li>
-            <li><a href="#cursus" aria-label="Cursus" itemprop="url">
+            <li><a href="#cursus" title="cursus" aria-label="Cursus" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-book-open">
@@ -168,7 +169,7 @@
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                     </svg>
                     Cursus</a></li>
-            <li><a href="#projets" aria-label="Mes projets" itemprop="url">
+            <li><a href="#projets" title="projets" aria-label="Mes projets" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-folder-git-2">
@@ -180,7 +181,7 @@
                         <circle cx="20" cy="19" r="2"/>
                     </svg>
                     Mes projets</a></li>
-            <li><a href="#contacter" aria-label="Me contacter" itemprop="url">
+            <li><a href="#contacter" title="contacter" aria-label="Me contacter" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-mail">

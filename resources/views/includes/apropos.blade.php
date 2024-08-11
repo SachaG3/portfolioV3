@@ -35,10 +35,10 @@
                     </svg>
                 </div>
                 <h4 class="font-medium text-lg mb-4" itemprop="name">Expérience Pratique</h4>
-                <p class="font-normal text-md" itemprop="description">De stages en développement web à des projets
-                    scolaires
-                    innovants, mon parcours est jalonné d'expériences enrichissantes qui attestent de ma capacité à
-                    mener à bien des projets variés.</p>
+                <p class="font-normal text-md" itemprop="description">
+                <p>Des stages en développement web à des projets scolaires innovants, mon parcours est jalonné
+                    d'expériences enrichissantes. Ces expériences témoignent de ma capacité à mener à bien une grande
+                    diversité de projets, comme en témoigne ce portfolio.</p>
             </div>
             <!-- Atouts et Compétences Clés -->
             <div tabindex="0"
@@ -158,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://www.github.com/SachaG3">
+                <a href="https://www.github.com/SachaG3" title="GitHub">
                     <div class="stat-value" itemprop="name">SachaG3</div>
                 </a>
             </div>
