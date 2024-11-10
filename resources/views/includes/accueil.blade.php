@@ -1,4 +1,4 @@
-<section class="flex flex-col items-center justify-center min-h-screen" style="min-height: 93svh" itemscope
+<section class="flex flex-col items-center justify-center min-h-screen" style="min-height: 107.55svh" itemscope
          itemtype="https://schema.org/Person">
     <div class="container mx-auto px-8 flex flex-col lg:flex-row items-center h-full">
         <div class="lg:flex-1 lg:justify-start mb-8 lg:mb-0">

@@ -1,4 +1,4 @@
-<section class="isolate px-6 mt-20 sm:py-32 lg:px-8 " id="contacter" itemscope
+<section class="isolate py-10 px-6 sm:py-32 lg:px-8 " id="contacter" itemscope
          itemtype="https://schema.org/ContactPage">
     <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-bold text-center" itemprop="headline">Me contacter</h2>

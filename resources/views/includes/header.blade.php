@@ -28,7 +28,7 @@
           itemprop="description">
     <meta property="og:title" content="Portfolio de Sacha Guignard">
     <meta property="og:description" content="Développeur backend passionné par le DevOps et l'architecture logicielle.">
-    <meta property="og:image" content="{{ asset('img/img.png') }}">
+    <meta property="og:image" content="{{ asset('img/firstPortfolio.png') }}">
     <meta property="og:url" content="https://www.sachaguignard.fr">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sacha Guignard Portfolio">
@@ -38,7 +38,7 @@
     <meta name="twitter:title" content="Portfolio de Sacha Guignard">
     <meta name="twitter:description"
           content="Développeur backend passionné par le DevOps et l'architecture logicielle.">
-    <meta name="twitter:image" content="{{ asset('img/img.png') }}">
+    <meta name="twitter:image" content="{{ asset('img/firstPortfolio.png') }}">
     <meta name="twitter:url" content="https://www.sachaguignard.fr">
 
     <link rel="canonical" href="https://www.sachaguignard.fr">
@@ -47,12 +47,32 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <meta name="google-site-verification" content="whNrt9m9dEdW_8jrmdtH_TY9u9XIZzBYy4ih6czMvCs"/>
+    <script>
+        function toggleContent(element) {
+            var content = element.closest('.educational-credential').nextElementSibling;
+            element.classList.toggle("toupie");
+
+            content.toggleAttribute("hidden");
+        }
+    </script>
+
+    <style>
+        .content-text {
+            display: inline-block;
+            width: max-content;
+        }
+
+        .toupie {
+            transform: rotate(180deg);
+        }
+    </style>
+
 </head>
-<body id="accueil" itemscope itemtype="https://schema.org/WebSite">
+<body id="accueil" itemscope itemtype="https://schema.org/WebSite" style="overflow-x: hidden">
 <header>
     <!-- Navigation -->
     <nav
-        class="navbar bg-base-100 sticky top-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/95 bg-base-300/50 relative">
+        class="navbar bg-base-100 fixed top-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/95 bg-base-300/50 ">
         <div class="flex-1" itemprop="name">
             <a class="btn btn-ghost text-xl" href="#accueil" title="Sacha Guignard" aria-label="Accueil" itemprop="url">Sacha
                 Guignard</a>

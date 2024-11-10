@@ -1,4 +1,4 @@
-<footer class="footer items-center p-4 bg-base-300/50 text-neutral-content" style="overflow-x: hidden;" itemscope
+<footer class="footer items-center p-4 bg-base-300/50 text-neutral-content" itemscope
         itemtype="https://schema.org/WPFooter">
     <aside class="items-center grid-flow-col" itemprop="copyrightHolder" itemscope
            itemtype="https://schema.org/Organization">
@@ -13,7 +13,8 @@
     <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end" itemscope
          itemtype="https://schema.org/SiteNavigationElement">
         <a tabindex="0" href="https://www.github.com/SachaG3" title="GitHub" target="_blank"
-           class="tooltip text-base-content" data-tip="Profil GitHub de Sacha Guignard"
+           class="tooltip text-base-content" style="position: relative; z-index: 9999"
+           data-tip="Profil GitHub de Sacha Guignard"
            aria-label="Profil GitHub de Sacha Guignard" itemprop="url">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

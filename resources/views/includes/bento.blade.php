@@ -33,7 +33,7 @@
                         <div class="card-body flex items-center justify-center">
                             <div class="mt-4">
                                 <a tabindex="0" href="${data.lien}" target="_blank"
-                                   class="tooltip text-base-content" data-tip="Site Gîte de la chouette"
+                                   class="tooltip text-base-content" data-tip="${data.title}"
                                    aria-label="Profil GitHub de Sacha Guignard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24"
                                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

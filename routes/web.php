@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GitHubInfoController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ViewUsageController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,6 +31,11 @@ Route::middleware(['single.user.auth'])->group(function () {
     Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
     Route::post('/skills/{skill}/update', [SkillController::class, 'update'])->name('skills.update');
     Route::put('/icons/{icon}', [SkillController::class, 'updateIcon'])->name('icons.update');
+    Route::get('/admin/view-usage', [ViewUsageController::class, 'analyzeViews'])->name('view.usage');
+    Route::get('/admin/controller-usage', [ViewUsageController::class, 'analyzeControllers'])->name('controller.usage');
+    Route::get('/admin/repository-usage', [ViewUsageController::class, 'analyzeRepositories'])->name('repository.usage');
+    Route::get('/admin/model-usage', [ViewUsageController::class, 'analyzeModels'])->name('model.usage');
 });
+
 
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');

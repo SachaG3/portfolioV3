@@ -1,4 +1,4 @@
-<section class="lg:m-2" id="competence" itemscope itemtype="https://schema.org/ItemList">
+<section class="py-10 lg:m-2" id="competence" itemscope itemtype="https://schema.org/ItemList">
     <h2 class="text-3xl font-bold text-center mt-2 mb-4" tabindex="0" itemprop="name">Mes compétences</h2>
     @foreach ($skills as $skill)
         <div class="py-12 sm:py-16" itemprop="itemListElement" itemscope itemtype="https://schema.org/ItemList">
