@@ -17,7 +17,7 @@
                             d="M13.9 17.45c-1.2-1.2-1.14-2.8-.2-3.73a2.43 2.43 0 0 1 3.44 0l.36.34.34-.34a2.43 2.43 0 0 1 3.45-.01v0c.95.95 1 2.53-.2 3.74L17.5 21Z"/>
                     </svg>
                 </div>
-                <h4 class="font-medium text-lg mb-4">Passion pour le Développement</h4>
+                <h4 class="font-medium text-lg mb-4 titre">Passion pour le Développement</h4>
                 <p class="font-normal text-md">Animé par une passion pour le développement informatique,
                     je m'efforce d'être à la pointe des technologies et innovations, prêt à relever les défis de
                     demain.</p>
@@ -134,7 +134,7 @@
                     </svg>
                 </div>
                 <div class="stat-title">Nombre de repository</div>
-                <div class="stat-value text-primary" id="repo" itemprop="numberOfItems"></div>
+                <div class="stat-value text-primary" id="repo" itemprop="numberOfItems">{{$latestStats->num_of_repos}}</div>
             </div>
 
             <div class="stat">
@@ -146,7 +146,7 @@
                     </svg>
                 </div>
                 <div class="stat-title">Nombre de commit</div>
-                <div class="stat-value text-secondary" id="commit" itemprop="interactionCount"></div>
+                <div class="stat-value text-secondary" id="commit" itemprop="interactionCount">{{$latestStats->total_commits}}</div>
             </div>
 
             <div class="stat">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <a href="https://www.github.com/SachaG3" title="GitHub">
-                    <div class="stat-value" itemprop="name">SachaG3</div>
+                    <div class="stat-value titre" itemprop="name">SachaG3</div>
                 </a>
             </div>
 
@@ -167,14 +167,3 @@
 
     </div>
 </section>
-
-<script>
-    async function fetchGitHubInfo() {
-        const response = await fetch(`/api/github-info`);
-        const data = await response.json();
-        document.getElementById("commit").innerHTML = `<p>${data.totalCommits}</p>`;
-        document.getElementById("repo").innerHTML = `<p>${data.numOfRepos}</p>`;
-    }
-
-    fetchGitHubInfo();
-</script>

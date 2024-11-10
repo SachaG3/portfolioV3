@@ -8,8 +8,14 @@
 }
 
 body {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+}
+
+h1, h2, h3, h4, h5, h6, .titre{
     font-family: "Madimi One", sans-serif;
 }
+
 
 .tooltip[data-tip-visible=true] {
     display: block; /* Rendez l'infobulle visible */

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GithubStat;
 use App\Models\Project;
 use App\Models\Skill;
 use App\Models\SkillIcon;
@@ -61,9 +62,10 @@ class SkillController extends Controller
 
     public function showSkills()
     {
+        $latestStats = GithubStat::orderBy('created_at', 'desc')->first();
         $projects = Project::with(['cards', 'technologies'])->get();
-        $skills = Skill::with('icons')->get(); // Assurez-vous d'avoir la relation 'icons' définie dans votre modèle Skill
-        return view('index', compact('skills', 'projects'));
+        $skills = Skill::with('icons')->get();
+        return view('index', compact('skills', 'projects', 'latestStats'));
     }
 
 
