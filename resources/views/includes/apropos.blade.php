@@ -119,9 +119,9 @@
             </div>
         </div>
     </div>
-    <div class="hidden sm:block" itemscope itemtype="https://schema.org/Organization">
+    <div class="hidden sm:block container max-w-screen-xl mx-auto px-4 " itemscope itemtype="https://schema.org/Organization">
         <h3 class="text-center text-lg font-semibold leading-8">Mon GitHub</h3>
-        <div class="stats shadow justify-center flex ml-20 mr-20 ">
+        <div class="stats shadow grid items-center">
 
             <div class="stat">
                 <div class="stat-figure text-primary">
@@ -133,7 +133,7 @@
                         <path d="m9 10 3-3 3 3"/>
                     </svg>
                 </div>
-                <div class="stat-title">Nombre de repository</div>
+                <div class="stat-title titre">Nombre de repository</div>
                 <div class="stat-value text-primary" id="repo" itemprop="numberOfItems">{{$latestStats->num_of_repos}}</div>
             </div>
 
@@ -145,7 +145,7 @@
                               d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
-                <div class="stat-title">Nombre de commit</div>
+                <div class="stat-title titre">Nombre de commit</div>
                 <div class="stat-value text-secondary" id="commit" itemprop="interactionCount">{{$latestStats->total_commits}}</div>
             </div>
 

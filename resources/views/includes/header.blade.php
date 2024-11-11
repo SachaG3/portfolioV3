@@ -74,7 +74,7 @@
     <nav
         class="navbar bg-base-100 fixed top-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/95 bg-base-300/50 ">
         <div class="flex-1" itemprop="name">
-            <a class="btn btn-ghost text-xl" href="#accueil" title="Sacha Guignard" aria-label="Accueil" itemprop="url">Sacha
+            <a class="btn btn-ghost text-xl titre" href="#accueil" title="Sacha Guignard" aria-label="Accueil" itemprop="url">Sacha
                 Guignard</a>
         </div>
         <div class="flex-none">
@@ -91,7 +91,7 @@
             </button>
         </div>
         <!-- Menu horizontal pour les écrans larges -->
-        <ul class="menu menu-horizontal p-0 hidden lg:flex" itemscope
+        <ul class="menu menu-horizontal p-0 hidden lg:flex titre" itemscope
             itemtype="https://schema.org/SiteNavigationElement">
             <li>
                 <select class="select" data-choose-theme aria-label="Choisir un thème">
@@ -153,7 +153,7 @@
     </nav>
 
     <!-- Menu déroulant pour les écrans mobiles -->
-    <div id="mobile-dropdown-menu" class="fixed left-0 right-0 bg-base-300 w-full shadow-md hidden"
+    <div id="mobile-dropdown-menu" class="fixed left-0 right-0 bg-base-300 w-full shadow-md hidden titre"
          style="top: 56px; z-index: 1000;">
         <ul class="menu menu-compact dropdown-content mt-3 p-2 rounded-box w-full">
             <li>

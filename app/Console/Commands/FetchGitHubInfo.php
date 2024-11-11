@@ -21,15 +21,17 @@ class FetchGitHubInfo extends Command
         ];
 
         // Fetch user repositories
-        $reposResponse = $client->request('GET', "https://api.github.com/users/{$username}/repos", [
+        $reposResponse = $client->request('GET', "https://api.github.com/user/repos", [
             'headers' => $headers,
         ]);
+
+
         $repos = json_decode($reposResponse->getBody()->getContents(), true);
         $numOfRepos = count($repos);
 
         $totalCommits = 0;
         foreach ($repos as $repo) {
-            $commitsResponse = $client->request('GET', "https://api.github.com/repos/{$username}/{$repo['name']}/commits?author={$username}", [
+            $commitsResponse = $client->request('GET', "https://api.github.com/repos/{$repo['owner']['login']}/{$repo['name']}/commits?author={$username}", [
                 'headers' => $headers,
             ]);
             $commits = json_decode($commitsResponse->getBody()->getContents(), true);
