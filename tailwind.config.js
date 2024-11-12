@@ -1,7 +1,5 @@
-import daisyui from "daisyui";
-
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
     darkMode: 'selector',
     content: ["./resources/views/**/*.{html,js,php}"],
     theme: {
@@ -19,7 +17,7 @@ export default {
         },
 
     },
-    plugins: [daisyui],
+    plugins: [require("daisyui")],
     daisyui: {
         themes: [{
             bonbon: {
@@ -40,5 +38,3 @@ export default {
     },
 
 }
-
-

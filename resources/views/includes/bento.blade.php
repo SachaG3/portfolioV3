@@ -2,7 +2,7 @@
      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm hidden"
      onclick="closeModal(event)">
     <div class="p-6 rounded-lg shadow-lg w-11/12 max-w-7xl" onclick="event.stopPropagation()">
-        <div id="modal-content" class="grid grid-cols-10 gap-4">
+        <div id="modal-content" class="grid grid-cols-10 gap-4 text">
             <!-- Modal content will be dynamically populated here -->
         </div>
     </div>
@@ -21,15 +21,21 @@
             if (modalContent) {
                 modalContent.innerHTML = `
                     <!-- Card 1: Description -->
-                    <div class="card shadow-lg bg-base-200 col-span-9">
+                    <div class="card shadow-lg bg-base-200 lg:col-span-9 col-span-10 row-span-2">
                         <div class="card-body">
                             <h2 class="card-title">${data.title}</h2>
                             <p>${data.description}</p>
                         </div>
                     </div>
+                    <div class="card shadow-lg bg-base-200 lg:col-span-10 col-span-10 row-span-2 lg:hidden block">
+                        <div class="card-body p-0">
+                            <img src="${data.image}" width="100px" alt="Project Thumbnail"
+                                 class="rounded-lg w-full h-full object-cover">
+                        </div>
+                    </div>
 
                     <!-- Card 2: GitHub and Website Links -->
-                    <div class="card shadow-lg bg-base-200 col-span-1">
+                    <div class="card shadow-lg bg-base-200 lg:col-span-1 lg:row-span-2 col-span-3 row-span-3">
                         <div class="card-body flex items-center justify-center">
                             <div class="mt-4">
                                 <a tabindex="0" href="${data.lien}" target="_blank"
@@ -37,7 +43,13 @@
                                    aria-label="Profil GitHub de Sacha Guignard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24"
                                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                         stroke-linejoin="round" class="lucide lucide-panel-top">
+                                         stroke-linejoin="round" class="lucide lucide-panel-top hidden lg:block">
+                                        <rect width="18" height="18" x="3" y="3" rx="2"/>
+                                        <path d="M3 9h18"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-panel-top lg:hidden block">
                                         <rect width="18" height="18" x="3" y="3" rx="2"/>
                                         <path d="M3 9h18"/>
                                     </svg>
@@ -47,13 +59,15 @@
                     </div>
 
                     <!-- Card 3: Technology Used -->
-                    <div class="card shadow-lg bg-base-200 col-span-3 row-span-2">
+                    <div class="card shadow-lg bg-base-200 lg:col-span-3 lg:row-span-2 col-span-7 row-span-3">
                         <div class="card-body">
                             <div class="grid grid-cols-2 gap-4 mt-4">
                                 ${data.technologies.map(tech => `
                                     <div class="flex justify-center items-center tooltip" data-tip="${tech.name}"
                                          aria-label="${tech.name}">
-                                       ${tech.icon}
+                                            <span class="block lg:hidden">${tech.icon.replace('<svg', '<svg width="40" height="40"')}</span>
+                                            <span class="lg:block hidden">${tech.icon}</span>
+
                                     </div>
                                 `).join('')}
                             </div>
@@ -61,7 +75,7 @@
                     </div>
 
                     <!-- Card 4: Project.php Image -->
-                    <div class="card shadow-lg bg-base-200 col-span-5 row-span-2">
+                    <div class="card shadow-lg bg-base-200 lg:col-span-5 hidden lg:block">
                         <div class="card-body p-0">
                             <img src="${data.image}" width="100px" alt="Project Thumbnail"
                                  class="rounded-lg w-full h-full object-cover">
@@ -69,7 +83,7 @@
                     </div>
 
                     <!-- Card 5: Project.php Participants -->
-                    <div class="card shadow-lg bg-base-200 col-span-2 row-span-2">
+                    <div class="card shadow-lg bg-base-200 lg:col-span-2 lg:row-span-2 col-span-10 hidden lg:block">
                         <div class="card-body">
                             <div class="mt-2">
                                 ${data.participants.map(participant => `
@@ -87,7 +101,7 @@
                     </div>
 
                     <!-- Card 6: Font and Colors -->
-                    <div class="card shadow-lg bg-base-200 col-span-7">
+                    <div class="card shadow-lg bg-base-200 lg:col-span-7 col-span-10 hidden lg:block">
                         <div class="card-body">
                             <div class="mt-2">
                                 <div class="flex items-center mb-4">
@@ -109,7 +123,7 @@
                     </div>
 
                     <!-- Card 7: Gallery Button -->
-                    <div class="card shadow-lg bg-base-200 col-span-3">
+                    <div class="card shadow-lg bg-base-200 lg:col-span-3 col-span-10 hidden lg:block">
                         <div class="card-body">
                             <h2 class="card-title">Gallery</h2>
                             <button class="btn btn-primary mt-4">View Gallery</button>
@@ -156,4 +170,5 @@
         });
     }
 </script>
+
 
