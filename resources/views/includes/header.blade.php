@@ -20,6 +20,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet" as="style">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Meta description -->
@@ -47,34 +52,15 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <meta name="google-site-verification" content="whNrt9m9dEdW_8jrmdtH_TY9u9XIZzBYy4ih6czMvCs"/>
-    <script>
-        function toggleContent(element) {
-            var content = element.closest('.educational-credential').nextElementSibling;
-            element.classList.toggle("toupie");
-
-            content.toggleAttribute("hidden");
-        }
-    </script>
-
-    <style>
-        .content-text {
-            display: inline-block;
-            width: max-content;
-        }
-
-        .toupie {
-            transform: rotate(180deg);
-        }
-    </style>
-
 </head>
-<body id="accueil" itemscope itemtype="https://schema.org/WebSite" style="overflow-x: hidden">
+<body id="accueil" itemscope itemtype="https://schema.org/WebSite">
 <header>
+
     <!-- Navigation -->
     <nav
-        class="navbar bg-base-100 fixed top-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/95 bg-base-300/50 ">
+        class="titre navbar bg-base-100 fixed top-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/95 bg-base-300/50 ">
         <div class="flex-1" itemprop="name">
-            <a class="btn btn-ghost text-xl titre" href="#accueil" title="Sacha Guignard" aria-label="Accueil" itemprop="url">Sacha
+            <a class="btn btn-ghost text-xl" href="#accueil" title="Sacha Guignard" aria-label="Accueil" itemprop="url">Sacha
                 Guignard</a>
         </div>
         <div class="flex-none">
@@ -91,7 +77,7 @@
             </button>
         </div>
         <!-- Menu horizontal pour les écrans larges -->
-        <ul class="menu menu-horizontal p-0 hidden lg:flex titre" itemscope
+        <ul class="menu menu-horizontal p-0 hidden lg:flex" itemscope
             itemtype="https://schema.org/SiteNavigationElement">
             <li>
                 <select class="select" data-choose-theme aria-label="Choisir un thème">
@@ -101,7 +87,8 @@
                     <option value="bonbon">Bonbon 🍬</option>
                 </select>
             </li>
-            <li><a href="#apropos" title="apropos" tabindex="0" aria-label="A propos" itemprop="url">
+            <li><a href="#apropos" onclick="event.preventDefault(); scrollToId('apropos')" title="apropos" tabindex="0"
+                   aria-label="A propos" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-user">
@@ -110,7 +97,8 @@
                         <circle cx="12" cy="7" r="4"/>
                     </svg>
                     A propos</a></li>
-            <li><a href="#cursus" title="cursus" tabindex="0" aria-label="Cursus" itemprop="url">
+            <li><a href="#cursus" onclick="event.preventDefault(); scrollToId('cursus')" title="cursus" tabindex="0"
+                   aria-label="Cursus" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-book-open">
@@ -119,7 +107,8 @@
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                     </svg>
                     Cursus</a></li>
-            <li><a href="#competence" title="competence" cursus tabindex="0" aria-label="Compétence" itemprop="url">
+            <li><a href="#competence" onclick="event.preventDefault(); scrollToId('competence')" title="competence"
+                   cursus tabindex="0" aria-label="Compétence" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-star">
@@ -128,7 +117,8 @@
                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                     </svg>
                     Compétence</a></li>
-            <li><a href="#projets" title="projets" tabindex="0" aria-label="Mes projets" itemprop="url">
+            <li><a href="#projets" onclick="event.preventDefault(); scrollToId('projets')" title="projets" tabindex="0"
+                   aria-label="Mes projets" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-folder-git-2">
@@ -140,7 +130,8 @@
                         <circle cx="20" cy="19" r="2"/>
                     </svg>
                     Mes projets</a></li>
-            <li><a href="#contacter" title="contacter" tabindex="0" aria-label="Me contacter" itemprop="url">
+            <li><a href="#contacter" onclick="event.preventDefault(); scrollToId('contacter')" title="contacter"
+                   tabindex="0" aria-label="Me contacter" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-mail">
@@ -153,7 +144,7 @@
     </nav>
 
     <!-- Menu déroulant pour les écrans mobiles -->
-    <div id="mobile-dropdown-menu" class="fixed left-0 right-0 bg-base-300 w-full shadow-md hidden titre"
+    <div id="mobile-dropdown-menu" class="titre fixed left-0 right-0 bg-base-300 w-full shadow-md hidden"
          style="top: 56px; z-index: 1000;">
         <ul class="menu menu-compact dropdown-content mt-3 p-2 rounded-box w-full">
             <li>
@@ -164,7 +155,8 @@
                     <option value="bonbon">Bonbon</option>
                 </select>
             </li>
-            <li><a href="#apropos" title="apropos" aria-label="A propos" itemprop="url">
+            <li><a href="#apropos" title="apropos" onclick="event.preventDefault(); scrollToId('apropos')"
+                   aria-label="A propos" class="menu-link" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-user">
@@ -173,7 +165,8 @@
                         <circle cx="12" cy="7" r="4"/>
                     </svg>
                     A propos</a></li>
-            <li><a href="#competence" title="competence" aria-label="Compétence" itemprop="url">
+            <li><a href="#competence" title="competence" onclick="event.preventDefault(); scrollToId('competence')"
+                   aria-label="Compétence" class="menu-link" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-star">
@@ -182,7 +175,8 @@
                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                     </svg>
                     Compétence</a></li>
-            <li><a href="#cursus" title="cursus" aria-label="Cursus" itemprop="url">
+            <li><a href="#cursus" title="cursus" onclick="event.preventDefault(); scrollToId('cursus')"
+                   aria-label="Cursus" class="menu-link" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-book-open">
@@ -191,7 +185,8 @@
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                     </svg>
                     Cursus</a></li>
-            <li><a href="#projets" title="projets" aria-label="Mes projets" itemprop="url">
+            <li><a href="#projets" title="projets" onclick="event.preventDefault(); scrollToId('projets')"
+                   aria-label="Mes projets" class="menu-link" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-folder-git-2">
@@ -203,7 +198,8 @@
                         <circle cx="20" cy="19" r="2"/>
                     </svg>
                     Mes projets</a></li>
-            <li><a href="#contacter" title="contacter" aria-label="Me contacter" itemprop="url">
+            <li><a href="#contacter" title="contacter" onclick="event.preventDefault(); scrollToId('contacter')"
+                   aria-label="Me contacter" itemprop="url" class="menu-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="lucide lucide-mail">
@@ -220,10 +216,31 @@
     document.addEventListener('DOMContentLoaded', function () {
         var menuButton = document.getElementById('menu-button');
         var dropdownMenu = document.getElementById('mobile-dropdown-menu');
-        menuButton.addEventListener('click', function () {
+        var menuLinks = document.querySelectorAll('.menu-link');
+
+        menuButton.addEventListener('click', function (event) {
+            event.stopPropagation();
             dropdownMenu.classList.toggle('hidden');
         });
+
+        menuLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                dropdownMenu.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!dropdownMenu.classList.contains('hidden')) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+
+        dropdownMenu.addEventListener('click', function (event) {
+            event.stopPropagation();
+        });
     });
+
+
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('a[aria-label="Accueil"]').addEventListener('click', function (event) {
             event.preventDefault();
@@ -232,4 +249,19 @@
             }
         });
     });
+
+    function remToPx(rem) {
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
+
+    const scrollToId = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const yOffset = element.classList.contains('md:py-16') ? 0 : -remToPx(4);
+            const targetScrollPosition = element.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({behavior: 'smooth', top: targetScrollPosition});
+        }
+    };
+
+    window.scrollToId = scrollToId;
 </script>
