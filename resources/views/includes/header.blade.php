@@ -52,8 +52,27 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <meta name="google-site-verification" content="whNrt9m9dEdW_8jrmdtH_TY9u9XIZzBYy4ih6czMvCs"/>
+
+    <script>
+        function toggleContent(element) {
+            var content = element.closest('.educational-credential').nextElementSibling;
+            element.classList.toggle("toupie");
+            content.toggleAttribute("hidden");
+        }
+    </script>
+    <style>
+        .content-text {
+            display: inline-block;
+            width: max-content;
+        }
+
+        .toupie {
+            transform: rotate(180deg);
+        }
+    </style>
+
 </head>
-<body id="accueil" itemscope itemtype="https://schema.org/WebSite">
+<body id="accueil" itemscope itemtype="https://schema.org/WebSite" style="overflow-x: hidden">
 <header>
 
     <!-- Navigation -->
