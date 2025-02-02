@@ -20,8 +20,8 @@ Route::post('/contact', [ContactController::class, 'store'])->name('mail');
 Route::middleware(['single.user.auth'])->group(function () {
     Route::get('/skills/create', [SkillController::class, 'create'])->name('skills.create');
     Route::post('/skills', [SkillController::class, 'store'])->name('skills.store');
-    Route::get('/bentoCreator', [ProjectController::class, 'create'])->name('projects.create');
-    Route::post('/createBento', [ProjectController::class, 'store'])->name('projects.store');
+    Route::get('/bentoCreator', [ProjectController::class, 'create'])->name('bento.projects.create');
+    Route::post('/createBento', [ProjectController::class, 'store'])->name('bento.projects.store');
     Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
     Route::post('/skills/{skill}/update', [SkillController::class, 'update'])->name('skills.update');
     Route::put('/icons/{icon}', [SkillController::class, 'updateIcon'])->name('icons.update');
