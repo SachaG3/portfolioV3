@@ -139,6 +139,8 @@
 
     function openModal(projectId) {
         fetchModalData(projectId).then(() => {
+            const body = document.querySelector('body');
+            body.style.overflow = 'hidden';
             const modal = document.getElementById('modal');
             if (modal) {
                 modal.classList.remove('hidden');
@@ -148,11 +150,14 @@
 
     function closeModal(event) {
         const modal = document.getElementById('modal');
+        const body = document.querySelector('body');
         if (modal) {
             const modalContent = document.querySelector('#modal > div');
             if (event && modalContent && !modalContent.contains(event.target)) {
+                body.style.overflow = 'auto';
                 modal.classList.add('hidden');
             } else if (!event) {
+                body.style.overflow = 'auto';
                 modal.classList.add('hidden');
             }
         }

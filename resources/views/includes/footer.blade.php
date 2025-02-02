@@ -11,13 +11,16 @@
 <script>
     let modal = document.getElementById("pdfModal"),
         pdfFrame = document.getElementById("pdfFrame");
+    body = document.querySelector("body");
 
     function openPDFModal() {
+        body.style.overflow = "hidden";
         modal.classList.remove("hidden");
         pdfFrame.src = "cv.pdf";
     }
 
     function closePDFModal() {
+        body.style.overflow = "auto";
         modal.classList.add("hidden");
         pdfFrame.src = "";
     }
