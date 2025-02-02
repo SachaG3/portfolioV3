@@ -4,19 +4,19 @@
     @include('includes/header')
 @endif
 
-@include('includes/bento')
+@include('sections.bento')
 
-@include('includes/accueil')
+@include('sections.accueil')
 
-@include('includes/apropos')
+@include('sections.apropos')
 
-@include('includes/cursus')
+@include('sections.cursus')
 
-@include('includes.competence')
+@include('sections.competence')
 
-@include('includes.mesProjet')
+@include('sections.mesProjet')
 
-@include('includes/mail')
+@include('sections.mail')
 
 @include('includes/footer')
 

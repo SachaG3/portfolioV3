@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GithubStat;
-use App\Models\Project;
 use App\Models\Skill;
 use App\Models\SkillIcon;
 use Illuminate\Http\Request;
@@ -58,14 +56,6 @@ class SkillController extends Controller
     public function create()
     {
         return view('skills.create');
-    }
-
-    public function showSkills()
-    {
-        $latestStats = GithubStat::orderBy('created_at', 'desc')->first();
-        $projects = Project::with(['cards', 'technologies'])->get();
-        $skills = Skill::with('icons')->get();
-        return view('index', compact('skills', 'projects', 'latestStats'));
     }
 
 
