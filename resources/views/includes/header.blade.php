@@ -5,13 +5,6 @@
     <link href="{{ asset('css/output.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title itemprop="name">Portfolio de Sacha Guignard - Développeur Web, Backend et DevOps</title>
 
@@ -48,8 +41,17 @@
 
     <link rel="canonical" href="https://www.sachaguignard.fr">
 
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="{{ asset('js/app.js') }}" rel="stylesheet"></script>
 
     <meta name="google-site-verification" content="whNrt9m9dEdW_8jrmdtH_TY9u9XIZzBYy4ih6czMvCs"/>
 
@@ -230,57 +232,3 @@
         </ul>
     </div>
 </header>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var menuButton = document.getElementById('menu-button');
-        var dropdownMenu = document.getElementById('mobile-dropdown-menu');
-        var menuLinks = document.querySelectorAll('.menu-link');
-
-        menuButton.addEventListener('click', function (event) {
-            event.stopPropagation();
-            dropdownMenu.classList.toggle('hidden');
-        });
-
-        menuLinks.forEach(function (link) {
-            link.addEventListener('click', function () {
-                dropdownMenu.classList.add('hidden');
-            });
-        });
-
-        document.addEventListener('click', function (event) {
-            if (!dropdownMenu.classList.contains('hidden')) {
-                dropdownMenu.classList.add('hidden');
-            }
-        });
-
-        dropdownMenu.addEventListener('click', function (event) {
-            event.stopPropagation();
-        });
-    });
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector('a[aria-label="Accueil"]').addEventListener('click', function (event) {
-            event.preventDefault();
-            if (window.location.pathname !== '/') {
-                window.location.href = '/';
-            }
-        });
-    });
-
-    function remToPx(rem) {
-        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-    }
-
-    const scrollToId = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            const yOffset = element.classList.contains('md:py-16') ? 0 : -remToPx(4);
-            const targetScrollPosition = element.getBoundingClientRect().top + window.scrollY + yOffset;
-            window.scrollTo({behavior: 'smooth', top: targetScrollPosition});
-        }
-    };
-
-    window.scrollToId = scrollToId;
-</script>

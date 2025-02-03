@@ -71,23 +71,3 @@
         </div>
     </div>
 </section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        if (window.innerWidth < 1024) { // Adjust the breakpoint as needed
-            // Generate the mobile H1
-            var mobileHeadingContainer = document.getElementById('mobile-heading-container');
-            var h1 = document.createElement('h1');
-            h1.className = 'text-3xl lg:text-5xl dark:text-white font-bold mt-2 leading-tight text-center lg:text-left lg:ml-4';
-            h1.setAttribute('itemprop', 'jobTitle');
-            h1.innerHTML = 'Développeur backend';
-            mobileHeadingContainer.appendChild(h1);
-
-            // Remove the desktop H1
-            var desktopHeading = document.getElementById('desktop-heading');
-            if (desktopHeading) {
-                desktopHeading.remove();
-            }
-        }
-    });
-</script>

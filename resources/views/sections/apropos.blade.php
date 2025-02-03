@@ -3,7 +3,6 @@
     <div class="container max-w-screen-xl mx-auto px-4">
         <h3 class="text-center text-lg font-semibold leading-8">Qui suis-je ?</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" tabindex="0">
-            <!-- Passion et Engagement dans le Développement Web -->
             <div tabindex="0"
                  class="hover:bg-base-200 bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl dark:over:bg-gray-800 transition duration-300 ease-in-out"
                  itemprop="description">
@@ -22,7 +21,6 @@
                     je m'efforce d'être à la pointe des technologies et innovations, prêt à relever les défis de
                     demain.</p>
             </div>
-            <!-- Expérience Pratique et Projets Réalisés -->
             <div tabindex="0"
                  class="hover:bg-base-200 bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl transition duration-300 ease-in-out"
                  itemprop="hasCredential" itemscope itemtype="https://schema.org/DefinedTerm">
@@ -40,7 +38,6 @@
                     d'expériences enrichissantes. Ces expériences témoignent de ma capacité à mener à bien une grande
                     diversité de projets, comme en témoigne ce portfolio.</p>
             </div>
-            <!-- Atouts et Compétences Clés -->
             <div tabindex="0"
                  class="bg-gray-750 px-8 py-10 rounded-md shadow-md bg-opacity-95 p-6 border border-gray-800 hover:shadow-xl hover:bg-base-200 transition duration-300 ease-in-out"
                  itemprop="knowsAbout" itemscope itemtype="https://schema.org/DefinedTerm">
@@ -119,7 +116,8 @@
             </div>
         </div>
     </div>
-    <div class="hidden sm:block container max-w-screen-xl mx-auto px-4 " itemscope itemtype="https://schema.org/Organization">
+    <div class="hidden sm:block container max-w-screen-xl mx-auto px-4 " itemscope
+         itemtype="https://schema.org/Organization">
         <h3 class="text-center text-lg font-semibold leading-8">Mon GitHub</h3>
         <div class="stats shadow grid items-center">
 
@@ -134,7 +132,8 @@
                     </svg>
                 </div>
                 <div class="stat-title titre">Nombre de repository</div>
-                <div class="stat-value text-primary" id="repo" itemprop="numberOfItems">{{$latestStats->num_of_repos}}</div>
+                <div class="stat-value text-primary" id="repo"
+                     itemprop="numberOfItems">{{$latestStats->num_of_repos}}</div>
             </div>
 
             <div class="stat">
@@ -146,7 +145,8 @@
                     </svg>
                 </div>
                 <div class="stat-title titre">Nombre de commit</div>
-                <div class="stat-value text-secondary" id="commit" itemprop="interactionCount">{{$latestStats->total_commits}}</div>
+                <div class="stat-value text-secondary" id="commit"
+                     itemprop="interactionCount">{{$latestStats->total_commits}}</div>
             </div>
 
             <div class="stat">

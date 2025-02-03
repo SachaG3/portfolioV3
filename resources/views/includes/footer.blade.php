@@ -1,3 +1,5 @@
+<button class="btn btn-primary" onclick="openPDFModal()">Ouvrir PDF</button>
+
 <div id="pdfModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
      style="z-index: 10000000;">
     <div class="modal-box w-11/12 max-w-5xl  rounded-lg bg-white shadow-lg relative flex"
@@ -7,30 +9,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    let modal = document.getElementById("pdfModal"),
-        pdfFrame = document.getElementById("pdfFrame");
-    body = document.querySelector("body");
-
-    function openPDFModal() {
-        body.style.overflow = "hidden";
-        modal.classList.remove("hidden");
-        pdfFrame.src = "cv.pdf";
-    }
-
-    function closePDFModal() {
-        body.style.overflow = "auto";
-        modal.classList.add("hidden");
-        pdfFrame.src = "";
-    }
-
-    modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            closePDFModal();
-        }
-    });
-</script>
 
 
 <footer class="footer items-center p-4 bg-base-300/50 text-neutral-content" itemscope
