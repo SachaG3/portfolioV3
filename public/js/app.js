@@ -263,21 +263,28 @@ window.scrollToId = scrollToId;
 
 
 const modal = document.getElementById("pdfModal");
-const pdfFrame = document.getElementById("pdfFrame");
-const body = document.body;
+
 
 function openPDFModal() {
-    const body = document.body;
     const modal = document.getElementById("pdfModal");
+    const pdfFrame = document.getElementById("pdfFrame");
+    const body = document.body;
     body.style.overflow = "hidden";
-    if (modal) modal.classList.remove("hidden");
-    if (pdfFrame) pdfFrame.src = "cv.pdf";
+    modal.classList.remove("hidden");
+    pdfFrame.src = "cv.pdf";
 }
 
 function closePDFModal() {
-    const body = document.body;
     const modal = document.getElementById("pdfModal");
+    const pdfFrame = document.getElementById("pdfFrame");
+    const body = document.body;
     body.style.overflow = "auto";
-    if (modal) modal.classList.add("hidden");
-    if (pdfFrame) pdfFrame.src = "";
+    modal.classList.add("hidden");
+    pdfFrame.src = "";
 }
+
+modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+        closePDFModal();
+    }
+});

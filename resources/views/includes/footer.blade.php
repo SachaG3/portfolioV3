@@ -1,5 +1,3 @@
-<button class="btn btn-primary" onclick="openPDFModal()">Ouvrir PDF</button>
-
 <div id="pdfModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
      style="z-index: 10000000;">
     <div class="modal-box w-11/12 max-w-5xl  rounded-lg bg-white shadow-lg relative flex"
