@@ -68,8 +68,11 @@
     function computeWindowSize() {
         var modalBox = document.querySelector('#stats-modal .modal-box');
         var width = modalBox.offsetWidth;
-        return Math.max(2, Math.floor(width / 300));
+        var calculatedWindowSize = Math.floor(width / 300);
+        var windowSize = Math.max(2, Math.min(calculatedWindowSize, 10));
+        return windowSize;
     }
+
 
     function downsampleArray(data, maxPoints) {
         if (data.length <= maxPoints) return data;
