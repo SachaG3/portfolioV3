@@ -51,12 +51,14 @@
             var end = Math.min(data.length, i + Math.floor(windowSize / 2) + 1);
             var sum = 0;
             for (var j = start; j < end; j++) {
-                sum += data[j];
+                sum += Number(data[j]);
             }
-            result.push(Math.ceil(sum / (end - start)));
+            var avg = Math.ceil(sum / (end - start));
+            result.push(avg);
         }
         return result;
     }
+
 
     function formatDate(d) {
         var year = d.getFullYear();
