@@ -53,7 +53,7 @@
             for (var j = start; j < end; j++) {
                 sum += data[j];
             }
-            result.push(sum / (end - start));
+            result.push(Math.ceil(sum / (end - start)));
         }
         return result;
     }
