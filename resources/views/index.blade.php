@@ -18,6 +18,8 @@
 
 @include('sections.mail')
 
+@include('sections.statGit')
+
 @include('includes/footer')
 
 

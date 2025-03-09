@@ -153,7 +153,7 @@ async function fetchModalData(projectId) {
 function openModal(projectId) {
     fetchModalData(projectId).then(() => {
         const body = document.body;
-        body.style.overflow = 'hidden';
+        body.classList.add('pas-bouger');
         const modal = document.getElementById('modal');
         if (modal) {
             modal.classList.remove('hidden');
@@ -164,10 +164,10 @@ function openModal(projectId) {
 function closeModal(event) {
     const modal = document.getElementById('modal');
     const body = document.body;
+    body.classList.remove('pas-bouger');
     if (modal) {
         const modalContent = document.querySelector('#modal > div');
         if (!event || (modalContent && !modalContent.contains(event.target))) {
-            body.style.overflow = 'auto';
             modal.classList.add('hidden');
         }
     }
@@ -288,3 +288,4 @@ modal.addEventListener("click", function (event) {
         closePDFModal();
     }
 });
+

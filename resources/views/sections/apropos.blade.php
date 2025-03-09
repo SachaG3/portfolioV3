@@ -132,8 +132,8 @@
                     </svg>
                 </div>
                 <div class="stat-title titre">Nombre de repository</div>
-                <div class="stat-value text-primary" id="repo"
-                     itemprop="numberOfItems">{{$latestStats->num_of_repos}}</div>
+                <div class="stat-value text-primary cursor-pointer" id="repo"
+                     itemprop="numberOfItems" onclick="openStatsModal()">{{$latestStats->num_of_repos}}</div>
             </div>
 
             <div class="stat">
@@ -145,8 +145,8 @@
                     </svg>
                 </div>
                 <div class="stat-title titre">Nombre de commit</div>
-                <div class="stat-value text-secondary" id="commit"
-                     itemprop="interactionCount">{{$latestStats->total_commits}}</div>
+                <div class="stat-value text-secondary cursor-pointer" id="commit"
+                     itemprop="interactionCount" onclick="openStatsModal()">{{$latestStats->total_commits}}</div>
             </div>
 
             <div class="stat">

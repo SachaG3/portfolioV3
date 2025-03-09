@@ -13,5 +13,7 @@ class GithubStat extends Model
         'username',
         'num_of_repos',
         'total_commits',
+        'created_at',
+        'updated_at',
     ];
 }

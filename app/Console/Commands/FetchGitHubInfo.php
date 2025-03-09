@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\GithubStat;
+use Carbon\Carbon;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
@@ -10,11 +11,14 @@ use Illuminate\Console\Command;
 class FetchGitHubInfo extends Command
 {
     protected $signature = 'github:fetch-info';
-    protected $description = 'Récupère les dépôts et commits GitHub et les enregistre en base de données';
+    protected $description = 'Calcule et met à jour les statistiques cumulatives (commits et repos) jusqu\'à aujourd\'hui en se basant sur la méthode cumulée (incluant les anciens commits).';
 
     public function handle()
     {
         $username = "SachaG3";
+        // Définir les auteurs autorisés (votre compte actuel et l'ancien)
+        $allowedAuthors = ['SachaG3', 'reglate'];
+
         $client = new Client();
         $headers = [
             'Authorization' => 'token ' . env('GITHUB_TOKEN'),
@@ -22,6 +26,7 @@ class FetchGitHubInfo extends Command
             'User-Agent' => 'Portfolio',
         ];
 
+        // 1. Récupération de tous les dépôts de l'utilisateur (une seule fois)
         $page = 1;
         $repos = [];
         try {
@@ -42,43 +47,88 @@ class FetchGitHubInfo extends Command
             return;
         }
 
-        $reposWithCommits = 0;
-        $totalCommits = 0;
-
+        // 2. Récupérer TOUS les commits pour chaque dépôt (une seule fois) pour les auteurs autorisés
+        // Stocker la date de chaque commit (en objet Carbon)
+        $allCommitsByRepo = []; // clé = id du dépôt, valeur = tableau de dates (Carbon)
         foreach ($repos as $repo) {
+            $repoId = $repo['id'];
+            $allCommitsByRepo[$repoId] = [];
             $pageCommits = 1;
-            $repoCommitsCount = 0;
             try {
                 do {
                     $commitsResponse = $client->request('GET', "https://api.github.com/repos/{$repo['owner']['login']}/{$repo['name']}/commits", [
                         'headers' => $headers,
                         'query' => [
-                            'author' => $username,
                             'per_page' => 100,
                             'page' => $pageCommits,
                         ],
                     ]);
                     $commits = json_decode($commitsResponse->getBody()->getContents(), true);
-                    $repoCommitsCount += count($commits);
+                    if (!is_array($commits)) {
+                        break;
+                    }
+                    foreach ($commits as $commit) {
+                        // Déterminer l'auteur via 'author' ou via 'commit.author.name' si absent
+                        $commitAuthor = null;
+                        if (isset($commit['author']) && $commit['author']) {
+                            $commitAuthor = $commit['author']['login'];
+                        } elseif (isset($commit['commit']['author']['name'])) {
+                            $commitAuthor = $commit['commit']['author']['name'];
+                        }
+                        // Ne conserver que les commits des auteurs autorisés
+                        if (in_array($commitAuthor, $allowedAuthors)) {
+                            if (isset($commit['commit']['committer']['date'])) {
+                                $commitDate = Carbon::parse($commit['commit']['committer']['date']);
+                                $allCommitsByRepo[$repoId][] = $commitDate;
+                            }
+                        }
+                    }
                     $pageCommits++;
                 } while (count($commits) > 0);
             } catch (Exception $e) {
-                $this->error("Erreur pour le dépôt {$repo['name']} : " . $e->getMessage());
+                $this->error("Erreur pour le dépôt {$repo['name']} lors de la récupération des commits : " . $e->getMessage());
                 continue;
-            }
-
-            if ($repoCommitsCount > 0) {
-                $reposWithCommits++;
-                $totalCommits += $repoCommitsCount;
             }
         }
 
-        GithubStat::create([
-            'username' => $username,
-            'num_of_repos' => $reposWithCommits,
-            'total_commits' => $totalCommits,
-        ]);
+        // 3. Calcul des statistiques cumulatives pour aujourd'hui
+        $today = Carbon::today();
+        $dayEnd = $today->copy()->endOfDay();
 
-        $this->info('Les informations GitHub ont été récupérées et enregistrées avec succès.');
+        $cumulativeCommits = 0;
+        $cumulativeRepos = 0;
+        foreach ($allCommitsByRepo as $repoId => $commitDates) {
+            $repoCommitCount = 0;
+            foreach ($commitDates as $commitDate) {
+                if ($commitDate->lte($dayEnd)) {
+                    $repoCommitCount++;
+                }
+            }
+            if ($repoCommitCount > 0) {
+                $cumulativeRepos++;
+                $cumulativeCommits += $repoCommitCount;
+            }
+        }
+
+        // 4. Mise à jour (ou création) de la statistique pour aujourd'hui
+        $existingStat = GithubStat::where('username', $username)
+            ->whereDate('created_at', $today->toDateString())
+            ->first();
+
+        if ($existingStat) {
+            $existingStat->update([
+                'num_of_repos' => $cumulativeRepos,
+                'total_commits' => $cumulativeCommits,
+            ]);
+        } else {
+            $stat = GithubStat::create([
+                'username' => $username,
+                'num_of_repos' => $cumulativeRepos,
+                'total_commits' => $cumulativeCommits,
+                'created_at' => $today->toDateTimeString(),
+            ]);
+        }
+
+        $this->info("Statistiques cumulatives jusqu'à aujourd'hui : Repos = {$cumulativeRepos}, Commits = {$cumulativeCommits}");
     }
 }

@@ -151,7 +151,7 @@
                         <circle cx="20" cy="19" r="2"/>
                     </svg>
                     Mes projets</a></li>
-            <li><a href="#contacter" onclick="event.preventDefault(); scrollToId('contacter')" title="contacter"
+            <li><a href="#contacter" onclick="openMailModal()" title="contacter"
                    tabindex="0" aria-label="Me contacter" itemprop="url">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -219,7 +219,7 @@
                         <circle cx="20" cy="19" r="2"/>
                     </svg>
                     Mes projets</a></li>
-            <li><a href="#contacter" title="contacter" onclick="event.preventDefault(); scrollToId('contacter')"
+            <li><a href="#contacter" title="contacter" onclick="openMailModal()"
                    aria-label="Me contacter" itemprop="url" class="menu-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

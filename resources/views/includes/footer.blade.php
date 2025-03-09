@@ -25,7 +25,7 @@
     <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end" itemscope
          itemtype="https://schema.org/SiteNavigationElement">
         <a tabindex="0" href="https://www.github.com/SachaG3" title="GitHub" target="_blank"
-           class="tooltip text-base-content" style="position: relative; z-index: 9999"
+           class="tooltip text-base-content" style="position: relative; z-index: 49"
            data-tip="Profil GitHub de Sacha Guignard"
            aria-label="Profil GitHub de Sacha Guignard" itemprop="url">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
