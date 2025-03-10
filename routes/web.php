@@ -29,6 +29,8 @@ Route::middleware(['single.user.auth'])->group(function () {
 
 Route::get('/stats-data', [HomeController::class, 'getStats']);
 
+Route::get('/github', [HomeController::class, 'github'])->name('github');
+
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
