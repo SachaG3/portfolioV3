@@ -158,7 +158,7 @@ class HomeController extends Controller
         ];
 
         $chartConfigJson = json_encode($chartConfig);
-        $url = "https://quickchart.io/chart?c=" . urlencode($chartConfigJson);
+        $url = "https://quickchart.io/chart?format=png&c=" . urlencode($chartConfigJson);
 
         return view('sections.statGitforGit', compact('url'));
     }
