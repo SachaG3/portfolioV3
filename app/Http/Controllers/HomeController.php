@@ -40,6 +40,7 @@ class HomeController extends Controller
 
     public function github()
     {
+        // Récupération des données
         $stats = GithubStat::where('username', 'SachaG3')
             ->orderBy('created_at', 'asc')
             ->get();
@@ -50,7 +51,6 @@ class HomeController extends Controller
 
         $commits = $stats->pluck('total_commits')->toArray();
         $repos = $stats->pluck('num_of_repos')->toArray();
-
 
         function movingAverage(array $data, int $windowSize): array
         {
@@ -158,9 +158,9 @@ class HomeController extends Controller
         ];
 
         $chartConfigJson = json_encode($chartConfig);
-        $url = "https://quickchart.io/chart?format=png&c=" . urlencode($chartConfigJson);
+        $url = "https://quickchart.io/chart/render?format=png&static=true&c=" . urlencode($chartConfigJson);
 
-        return view('sections.statGitforGit', compact('url'));
+        return redirect($url);
     }
 
 
