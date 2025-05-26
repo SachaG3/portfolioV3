@@ -6,9 +6,17 @@
                 <p class="font-bold" itemprop="name">Hello, I am <span itemprop="givenName">Sacha</span>! 👋</p>
             </div>
             <div class="flex justify-center">
-                <img src="/img/profile.webp" alt="Sacha Guignard"
-                     class="rounded-lg shadow-2xl max-w-full h-auto align-middle border-none animate-float hover:scale-105 transition-transform duration-300"
-                     style="max-height: 50vh;" itemprop="image"/>
+                <div id="profile-card" class="card cursor-pointer" onclick="flipCard()" style="position:relative;">
+                    <div class="card-face front">
+                        <img src="/img/profile.webp" alt="Sacha Guignard"
+                             class="rounded-lg shadow-2xl max-w-full h-auto align-middle border-none animate-float hover:scale-105 transition-transform duration-300"
+                             style="max-height: 50vh;" itemprop="image"/>
+                    </div>
+                    <div class="card-face back flex flex-col items-center justify-center bg-blue-200 dark:bg-blue-900 rounded-lg shadow-2xl">
+                        <img src="/img/profile2.webp" alt="Sacha Guignard" class="rounded-full w-24 h-24  border-4 border-white shadow-lg" />
+                        <div class="text-sm text-gray-600 dark:text-gray-300">Illustration by Ruby</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -73,3 +81,45 @@
 
 
 </section>
+
+<style>
+.card {
+  perspective: 1000px;
+  position: relative;
+}
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+  backface-visibility: hidden;
+  transition: transform 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-face.front {
+  z-index: 2;
+  background: transparent;
+  position: relative;
+}
+.card-face.back {
+  transform: rotateY(180deg);
+  z-index: 1;
+  padding: 1rem;
+}
+.card.flipped .front {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+.card.flipped .back {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+</style>
+<script>
+function flipCard() {
+    const card = document.getElementById('profile-card');
+    card.classList.toggle('flipped');
+}
+</script>
