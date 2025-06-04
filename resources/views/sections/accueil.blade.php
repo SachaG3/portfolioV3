@@ -14,7 +14,7 @@
                     </div>
                     <div class="card-face back flex flex-col items-center justify-center bg-blue-200 dark:bg-blue-900 rounded-lg shadow-2xl">
                         <img src="/img/profile2.webp" alt="Sacha Guignard" class="rounded-full w-24 h-24  border-4 border-white shadow-lg" />
-                        <div class="text-sm text-gray-600 dark:text-gray-300">Illustration by Ruby</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-300">Illustration by AxRuby</div>
                     </div>
                 </div>
             </div>
